@@ -1,8 +1,14 @@
+import Header from './components/header/Header';
+import Recipes from './components/recipes/Recipes';
+import User from './components/user/User'
+
 function App() {
   return (
-    <div className="App">
-      Hello world
-    </div>
+    <section>
+      <Header />
+      <User />
+      <Recipes />
+    </section>
   );
 }
 

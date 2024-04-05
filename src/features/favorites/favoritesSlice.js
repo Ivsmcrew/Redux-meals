@@ -15,8 +15,14 @@ export const favoritesSlice = createSlice({
         }
       }
 
-      if (isExists) {
-        state = state.filter((recipe) => recipe.id !== action.payload.id)
+      if (isExists()) {
+        let index;
+        state.forEach((recipe, ind) => {
+          if (recipe.id === action.payload.id) {
+            index = ind
+          }
+        })
+        state.splice(index, 1)
       } else {
         state.push(action.payload)
       }
@@ -25,6 +31,5 @@ export const favoritesSlice = createSlice({
 })
 
 export const { toggleFavorites } = favoritesSlice.actions
-// export const { actions, reducer } = favoritesSlice
 
 export default favoritesSlice.reducer
