@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import RecipeItem from '../recipe-item/RecipeItem';
 import { getMeals } from '../../features/meals/mealsActions';
+import styles from './Recipes.module.css'
 
 function Recipes() {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ function Recipes() {
   }, [])
 
   return (
-    <div>
+    <div className={styles.recipes}>
       {
         isLoading ?
           <div>Loading...</div> :

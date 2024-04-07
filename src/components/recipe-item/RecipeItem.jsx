@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleFavorites } from '../../features/favorites/favoritesSlice';
+import styles from './RecipeItem.module.css'
 
 function RecipeItem({recipe}) {
   const favoritesState = useSelector(state => state.favorites)
@@ -20,10 +21,10 @@ function RecipeItem({recipe}) {
   }
 
   return (
-    <div>
-      <h2>{recipe.name}</h2>
-      <img src={recipe.img} alt={recipe.name} width={200}/>
-      <button onClick={() => handleAddToFavorites(recipe)}>
+    <div className={styles.recipe}>
+      <h2 className={styles.name}>{recipe.name}</h2>
+      <img className={styles.img} src={recipe.img} alt={recipe.name} />
+      <button className={styles.button} onClick={() => handleAddToFavorites(recipe)}>
         {isItInFavorites() ?
           'Remove from favorites' :
           'Add to favorites'

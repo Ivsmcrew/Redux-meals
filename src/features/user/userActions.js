@@ -17,7 +17,7 @@ export const getUserById = createAsyncThunk(
 const fetchUserById = (userUd) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve( {id: 1, name: 'Max'})
+      resolve( {id: 1, name: 'Valeryy Kozhura'})
     }, 1000)
   })
 }
